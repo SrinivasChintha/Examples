@@ -1,0 +1,33 @@
+<script>
+class Polygon{
+	constructor(height,width){
+		this.h=height;
+		this.w=width;
+	}
+	test(){
+		console.log("The height of the polygon: "+this.h);
+		console.log("The width of the polygon: "+this.w);
+	}
+	static disp(){
+		console.log("This is a static function");
+	}
+}
+
+class React extends Polygon{
+	constructor(height,width){
+		super(height,width);
+	}
+	test(){ //overriding parent class test function
+	super.test(); //calling super class test function
+	console.log("srinivasa rao chintha");
+	}
+}
+
+var polyObj = new Polygon(10,20)
+polyObj.test();
+
+const polyObj1 = new React(20,30);
+polyObj1.test();
+
+Polygon.disp();
+</script>

@@ -1,0 +1,17 @@
+<html>
+<body>
+<p>counting with a local variable</p>
+<button type="button" onclick="myFunction()"> click me</button>
+
+<p id="demo">0</p>
+
+<script>
+var count = 0;
+	var add = (function(){
+		return function (){return count+=1;}
+	})();
+	
+	function myFunction(){
+		document.getElementById("demo").innerHTML = add();
+	}
+</script>

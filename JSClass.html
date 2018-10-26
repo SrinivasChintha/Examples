@@ -1,0 +1,42 @@
+<script>
+	function MyClass(){
+		var private ="i am private";
+		this.public ="i am public";
+		prev = "i am previlige";
+		
+		var privateFunc = function(){
+			alert("calling private function");
+		}
+		this.publicFunc = function(){
+			alert(this.protovar);
+			alert("calling public function");
+		}
+		prevFunc = function(){
+			alert("calling previlige function");
+		}
+	}
+	MyClass.prototype.protovar = "this is proto variable";
+	MyClass.prototype.protoFunc = function(){
+		alert("this is a proto function");
+	}
+	
+	function MyChildClass(){
+	}
+	
+	MyChildClass.prototype= new MyClass();
+	
+	
+	var obj = new MyClass();
+	alert(obj.private);
+	alert(obj.public);
+	alert(prev);
+	//obj.privateFunc();
+	obj.publicFunc();
+	prevFunc();
+	
+	alert(obj.protovar);
+	obj.protoFunc();
+	
+	myChildObj = new MyChildClass();
+	myChildObj.protoFunc();
+</script>
